@@ -1,8 +1,8 @@
-from locators import *
+from helpers.locators import *
 from helpers.generate_data import *
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from urls import *
+from helpers.urls import *
 
 def test_success_registration(driver):
     # Тест успешная регистрация

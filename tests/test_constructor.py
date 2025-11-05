@@ -1,5 +1,5 @@
-from helpers.login import *
-
+from helpers.urls import *
+from helpers.locators import *
 
 def test_constructor_section_buns_success(driver):
     # Переход из раздела "Конструктор" в раздел "Булки"

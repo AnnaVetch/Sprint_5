@@ -1,6 +1,6 @@
 from helpers.login import *
-from urls import *
-from users import *
+from helpers.urls import *
+from helpers.users import *
 
 
 def test_logout_from_personal_account_success(driver):

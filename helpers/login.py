@@ -1,5 +1,5 @@
-from locators import *
-from urls import *
+from helpers.locators import *
+from helpers.urls import *
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 

@@ -1,8 +1,8 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from locators import *
-from urls import *
-from users import *
+from helpers.locators import *
+from helpers.urls import *
+from helpers.users import *
 
 
 def test_success_login(driver):

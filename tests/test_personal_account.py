@@ -1,6 +1,6 @@
 from helpers.login import *
-from urls import *
-from users import *
+from helpers.urls import *
+from helpers.users import *
 
 
 def test_success_login(driver):

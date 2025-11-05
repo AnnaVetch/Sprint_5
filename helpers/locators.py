@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.by import By
 
 # Главная страница
 LOGIN_BUTTON_MAIN = (By.XPATH, "//button[text()='Войти в аккаунт']")
