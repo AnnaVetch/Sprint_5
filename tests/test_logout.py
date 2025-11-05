@@ -13,6 +13,7 @@ def test_logout_from_personal_account_success(driver):
    driver.find_element(*ACCOUNT_BUTTON).click()
    WebDriverWait(driver, 100).until(expected_conditions.url_to_be(PROFILE_URL))
    driver.find_element(*LOGOUT_BUTTON).click()
-   WebDriverWait(driver, 100).until(expected_conditions.url_to_be(LOGIN_URL))
+
    # Assert
-   assert driver.current_url in LOGIN_URL
+   assert WebDriverWait(driver, 100).until(expected_conditions.url_to_be(LOGIN_URL))
+   

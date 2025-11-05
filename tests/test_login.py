@@ -15,10 +15,9 @@ def test_success_login(driver):
     driver.find_element(*LOGIN_EMAIL).send_keys(USER_EMAIL)
     driver.find_element(*LOGIN_PASS).send_keys(USER_PASS)
     driver.find_element(*LOGIN_BUTTON).click()
-    WebDriverWait(driver, 100).until(expected_conditions.url_to_be(HOST))
 
     # Assert
-    assert driver.current_url in HOST
+    assert WebDriverWait(driver, 100).until(expected_conditions.url_to_be(HOST))
 
 
 def test_login_account_button(driver):
@@ -30,10 +29,9 @@ def test_login_account_button(driver):
     driver.find_element(*LOGIN_EMAIL).send_keys(USER_EMAIL)
     driver.find_element(*LOGIN_PASS).send_keys(USER_PASS)
     driver.find_element(*LOGIN_BUTTON).click()
-    WebDriverWait(driver, 100).until(expected_conditions.url_to_be(HOST))
 
     # Assert
-    assert driver.current_url in HOST
+    assert WebDriverWait(driver, 100).until(expected_conditions.url_to_be(HOST))
 
 
 def test_login_from_registration_form_success(driver):
@@ -48,10 +46,9 @@ def test_login_from_registration_form_success(driver):
     driver.find_element(*LOGIN_EMAIL).send_keys(USER_EMAIL)
     driver.find_element(*LOGIN_PASS).send_keys(USER_PASS)
     driver.find_element(*LOGIN_BUTTON).click()
-    WebDriverWait(driver, 1000).until(expected_conditions.url_to_be(HOST))
 
     # Assert
-    assert driver.current_url in HOST
+    assert WebDriverWait(driver, 1000).until(expected_conditions.url_to_be(HOST))
 
 
 def test_login_from_recovery_form_success(driver):
@@ -68,6 +65,6 @@ def test_login_from_recovery_form_success(driver):
     driver.find_element(*LOGIN_EMAIL).send_keys(USER_EMAIL)
     driver.find_element(*LOGIN_PASS).send_keys(USER_PASS)
     driver.find_element(*LOGIN_BUTTON).click()
-    WebDriverWait(driver, 1000).until(expected_conditions.url_to_be(LOGIN_URL))
 
-    assert driver.current_url in LOGIN_URL
+    # Assert
+    assert WebDriverWait(driver, 1000).until(expected_conditions.url_to_be(LOGIN_URL))

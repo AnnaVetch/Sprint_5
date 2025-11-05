@@ -16,10 +16,10 @@ def test_success_registration(driver):
     driver.find_element(*REG_EMAIL).send_keys(email)
     driver.find_element(*REG_PASS).send_keys(password)
     driver.find_element(*REG_BUTTON).click()
-    WebDriverWait(driver, 10).until(expected_conditions.url_contains(LOGIN_URL))
 
     # Assert
-    assert driver.current_url in LOGIN_URL
+    assert WebDriverWait(driver, 10).until(expected_conditions.url_contains(LOGIN_URL))
+
 
 
 def test_error_short_password(driver):
@@ -33,7 +33,8 @@ def test_error_short_password(driver):
     driver.find_element(*REG_EMAIL).send_keys(email)
     driver.find_element(*REG_PASS).send_keys("888")
     driver.find_element(*REG_BUTTON).click()
-    WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(REG_ERROR))
 
     # Assert
-    assert driver.find_element(*REG_ERROR).is_displayed()
+    error_element = WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(REG_ERROR))
+    assert error_element.is_displayed
+    

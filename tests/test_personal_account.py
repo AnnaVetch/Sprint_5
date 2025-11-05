@@ -14,10 +14,9 @@ def test_success_login(driver):
     driver.find_element(*LOGIN_EMAIL).send_keys(USER_EMAIL)
     driver.find_element(*LOGIN_PASS).send_keys(USER_PASS)
     driver.find_element(*LOGIN_BUTTON).click()
-    WebDriverWait(driver, 100).until(expected_conditions.url_to_be(HOST))
 
     # Assert
-    assert driver.current_url in HOST
+    assert WebDriverWait(driver, 100).until(expected_conditions.url_to_be(HOST))
 
 
 def test_logout_from_personal_account_to_constructor_by_click_logo_success(driver):
